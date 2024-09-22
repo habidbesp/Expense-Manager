@@ -12,6 +12,8 @@ export const budgetReducer = (
 ) => {
   switch (action.type) {
     case "add-budget":
+      console.log("desde reducer add-budget");
+
       return {
         ...state,
         budget: action.payload.budget,
