@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
 import { DraftExpense, Expense } from "../types";
-import { sampleData } from "../helpers";
 
 export type BudgetActions =
   | { type: "add-budget"; payload: { budget: number } }
@@ -18,10 +17,20 @@ export type BudgetState = {
   editingId: Expense["id"];
 };
 
+const initialBudget = () => {
+  const localStorageBudget = localStorage.getItem("budget");
+  return localStorageBudget ? +localStorageBudget : 0;
+};
+
+const localStorageExpenses = (): Expense[] => {
+  const localStorageExpenses = localStorage.getItem("expenses");
+  return localStorageExpenses ? JSON.parse(localStorageExpenses) : [];
+};
+
 export const initialState: BudgetState = {
-  budget: 0,
+  budget: initialBudget(),
   modal: false,
-  expenses: sampleData,
+  expenses: localStorageExpenses(),
   editingId: "",
 };
 
