@@ -16,8 +16,8 @@ export default function ExpenseForm() {
   });
 
   const [error, setError] = useState("");
-
-  const { state, dispatch } = useBudget();
+  const [previousAmount, setPreviousAmount] = useState(0);
+  const { state, dispatch, remainingBudget } = useBudget();
 
   useEffect(() => {
     const editingExpense = state.expenses.find(
@@ -25,6 +25,7 @@ export default function ExpenseForm() {
     );
     if (state.editingId && editingExpense) {
       setExpense(editingExpense);
+      setPreviousAmount(editingExpense.amount);
     }
   }, [state.editingId]);
 
@@ -49,9 +50,16 @@ export default function ExpenseForm() {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     // validar
     if (Object.values(expense).includes("")) {
       setError("All fields are required");
+      return;
+    }
+
+    // validate to don't go over budget
+    if (expense.amount - previousAmount > remainingBudget) {
+      setError("Budget limit exceeded");
       return;
     }
 
@@ -71,6 +79,8 @@ export default function ExpenseForm() {
       category: "",
       date: new Date(),
     });
+
+    setPreviousAmount(0);
   };
 
   return (
