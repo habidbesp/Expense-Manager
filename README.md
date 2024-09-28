@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# Expense Manager
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Expense Manager is a React application that allows you to organize and manage your expenses according to your budget.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Set a budget: You can enter a budget and track your expenses accordingly.
+- Visualize budget and expenses: View your budget, expenses, and remaining budget in a panel, where the expenses are represented with a pie chart.
+- Add expenses: Use a modal to input your expenses, which will then be rendered in a list in the layout.
+- Categorize expenses: Filter your expenses by category.
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+The project was developed using:
 
-- Configure the top-level `parserOptions` property like this:
+- **React**: A JavaScript library for building user interfaces.
+- **Vite**: A fast build tool for modern web applications.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Context API**: A React feature for managing global state.
+- **useReducer**: A React hook for managing complex state logic.
+- **Custom Hooks**: For managing global context.
+- **Tailwind CSS**: A utility-first CSS framework for styling.
+- **react-swipeable-list**: An npm package for creating swipeable lists.
+- **react-circular-progressbar**: A library for creating circular progress bars.
+- **@headlessui/react**: For rendering animated modals.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## How to Run the Project
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Clone the repository:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+   ```bash
+   git clone https://github.com/habidbesp/Expense-Manager.git
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+2. Navigate to the project directory:
+
+   ```bash
+   cd Expense-Manager
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Run the project in development mode:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open in your browser: http://localhost:5173
+
+## Course Information
+
+This application was developed as part of the Udemy course:
+
+**"React: Hooks y State hasta TypeScript, Zod, Zustand, React Query, Next.js, React Router, MERN y PERN"**
+
+Taught by: _Juan Pablo De la Torre Valdez_  
+[More about the course](https://codigoconjuan.com/)
+
+## Contributions
+
+Contributions are welcome! If you have suggestions, ideas, or improvements, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License.
