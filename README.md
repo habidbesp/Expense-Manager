@@ -2,6 +2,12 @@
 
 Expense Manager is a React application that allows you to organize and manage your expenses according to your budget.
 
+## Live Demo
+
+You can check out the live version of the Expense Manager app deployed on Vercel by clicking the link below:
+
+[Expense Manager - Live Demo](https://expense-manager-flame-two.vercel.app/)
+
 ## Features
 
 - Set a budget: You can enter a budget and track your expenses accordingly.
