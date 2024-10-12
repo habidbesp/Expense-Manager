@@ -4,9 +4,9 @@ Expense Manager is a React application that allows you to organize and manage yo
 
 ## Live Demo
 
-You can check out the live version of the Expense Manager app deployed on Vercel by clicking the link below:
+You can check out the live version of the **Expense Manager** app deployed on Vercel by clicking the link below:
 
-[Expense Manager - Live Demo](https://expense-manager-flame-two.vercel.app/)
+<a href="https://expense-manager-flame-two.vercel.app/" target="_blank" rel="noopener noreferrer">Expense Manager - Live Demo</a>
 
 ## Features
 
@@ -29,6 +29,7 @@ The project was developed using:
 - **react-swipeable-list**: An npm package for creating swipeable lists.
 - **react-circular-progressbar**: A library for creating circular progress bars.
 - **@headlessui/react**: For rendering animated modals.
+- **vercel**: A platform for deploying and hosting web applications quickly and efficiently. It offers automatic deployment, preview of changes, and a global CDN to enhance performance.
 
 ## How to Run the Project
 
